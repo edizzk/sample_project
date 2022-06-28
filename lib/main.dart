@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:get/get.dart';
 
+import 'service/localization.dart';
 import 'view/crew_view.dart';
 
 void main() {
@@ -12,13 +15,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Sample Project',
+    return GetMaterialApp(
+      title: 'project_title'.tr,
+      translations: Localization(),
+     // locale: const Locale('en', 'US'),
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'UK'),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const CrewView(title: 'Sample Project'),
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const CrewView(title: 'project_title'),
     );
   }
 }
