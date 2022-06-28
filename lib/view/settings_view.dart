@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
+import '../core/dialogs.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class SettingsView extends StatelessWidget {
             leading: const Icon(Icons.settings),
             title: Text("change_language".tr),
             onTap: () {
-
+              Navigator.of(context).restorablePush(Dialogs.settingsDialog);
             },
           )
         ],
