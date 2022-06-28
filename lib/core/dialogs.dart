@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_project/model/certificate_model.dart';
 
+import '../controllers/lang_controller.dart';
 import 'language.dart';
 
 class Dialogs {
 
-  static Language lang = Language.tr;
+  static final LanguageController languageController = Get.put(LanguageController(Language.en));
 
   static Route<Object?> settingsDialog(
       BuildContext context, Object? arguments) {
@@ -20,14 +21,22 @@ class Dialogs {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ListTile(
-              leading: Radio<Language>(value: Language.en, groupValue: lang, onChanged: onChanged),
+            Obx(() => ListTile(
+              leading: Radio<Language>(value: Language.en, groupValue: languageController.lang.value, onChanged: (value) {}),
               title: Text("english".tr),
-            ),
-            ListTile(
-              leading: Radio<Language>(value: Language.tr, groupValue: lang, onChanged: onChanged),
+              onTap: () {
+                Get.updateLocale(const Locale('en', 'US'));
+                languageController.lang(Language.en);
+              },
+            )),
+            Obx(() => ListTile(
+              leading: Radio<Language>(value: Language.tr, groupValue: languageController.lang.value, onChanged: (value) {}),
               title: Text("turkish".tr),
-            ),
+              onTap: () {
+                Get.updateLocale(const Locale('tr', 'TR'));
+                languageController.lang(Language.tr);
+              },
+            )),
           ],
         ),
         actions: [
@@ -74,21 +83,5 @@ class Dialogs {
       onPressed: () { Navigator.pop(context); },
       child: Text("ok".tr),
     );
-
-}
-
-  static void onChanged(Language? value) {
-    if (value==Language.en) {
-      debugPrint("US SEÇİLDİİİİ");
-      lang = Language.tr;
-    }
-    if (value==Language.tr) {
-      debugPrint("TR SEÇİLDİİİİ");
-      lang = Language.en;
-    }
-
-
   }
-
-
 }
