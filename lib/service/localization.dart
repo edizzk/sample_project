@@ -17,6 +17,10 @@ class Localization extends Translations {
       'ok': 'Okey',
       'english': 'English',
       'turkish': 'Turkish',
+      'first_name': 'First Name',
+      'last_name': 'Last Name',
+      'nationality': 'Nationality',
+      'crew_title': 'Title',
     },
     'tr_TR': {
       'project_title': 'Örnek Proje',
@@ -31,6 +35,10 @@ class Localization extends Translations {
       'ok': 'Tamam',
       'english': 'İngilizce',
       'turkish': 'Türkçe',
+      'first_name': 'İsim',
+      'last_name': 'Soyisim',
+      'nationality': 'Ulus',
+      'crew_title': 'Başlık',
     }
   };
 }
