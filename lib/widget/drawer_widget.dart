@@ -54,6 +54,7 @@ class MyDrawer extends StatelessWidget{
           leading: const Icon(Icons.settings),
           title: Text("settings_menu".tr),
           onTap: () {
+            Navigator.pop(context);
             Navigator.pushNamed(context, "/settings");
           },
         ),
