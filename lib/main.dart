@@ -19,9 +19,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'project_title'.tr,
       translations: Localization(),
-     // locale: const Locale('en', 'US'),
       locale: const Locale('en', 'US'),
-      fallbackLocale: const Locale('en', 'UK'),
+      fallbackLocale: const Locale('en', 'US'),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: "/",
