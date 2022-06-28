@@ -23,7 +23,12 @@ class MyApp extends StatelessWidget {
       fallbackLocale: const Locale('en', 'UK'),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const CrewView(title: 'project_title'),
+      initialRoute: "/",
+      routes: {
+        "/" : (context) => CrewView(title: 'project_title'.tr),
+        "/settings" : (context) => const Center(),
+        "/detail_crew" : (context) => const Center(),
+      },
     );
   }
 }
