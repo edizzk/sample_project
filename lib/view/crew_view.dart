@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../controllers/crew_controller.dart';
 import '../widget/crew_card_widget.dart';
 import '../widget/drawer_widget.dart';
+import '../widget/google_map_widget.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
@@ -43,7 +44,7 @@ class CrewView extends StatelessWidget {
                 },
               ),
             ),
-            const Center(child: Text("MARINE")),
+            buildGoogleMap(),
           ],
         ),
       ),
