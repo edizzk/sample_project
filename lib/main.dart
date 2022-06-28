@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project/view/detail_crew_view.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 import 'service/localization.dart';
 import 'view/crew_view.dart';
+import 'view/settings_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,8 +28,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/" : (context) => CrewView(title: 'project_title'.tr),
-        "/settings" : (context) => const Center(),
-        "/detail_crew" : (context) => const Center(),
+        "/settings" : (context) => const SettingsView(),
+        "/detail_crew" : (context) => const DetailCrewView(),
       },
     );
   }
