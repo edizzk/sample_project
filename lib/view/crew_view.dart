@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/drawer_widget.dart';
+
 class CrewView extends StatelessWidget {
   const CrewView({Key? key, required this.title}) : super(key: key);
 
@@ -7,11 +9,26 @@ class CrewView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        drawer: const MyDrawer(),
+        appBar: AppBar(
+          title: Text(title),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: "Crew"),
+              Tab(text: "Marine")
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            Center(child: Text("CREW")),
+            Center(child: Text("MARINE")),
+          ],
+        ),
       ),
-      body: const Center(),
-      );
+    );
   }
 }
