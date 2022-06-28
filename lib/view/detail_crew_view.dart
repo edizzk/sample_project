@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
+import '../core/dialogs.dart';
 import '../model/crew_model.dart';
 
 class DetailCrewView extends StatelessWidget {
@@ -15,7 +16,7 @@ class DetailCrewView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('project_title'.tr)),
       body: Padding(
-        padding: const EdgeInsets.only(left: 5, right: 20),
+        padding: const EdgeInsets.only(right: 10),
         child: Column(
           children: [
             ListTile(
@@ -47,7 +48,6 @@ class DetailCrewView extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: crew.certificates.length,
                     itemBuilder: (BuildContext context, int index) {
-                      debugPrint("GELDİİİ ${crew.certificates.length}");
                       return ListTile(
                         title: Text(crew.certificates[index].name),
                         trailing: Text(crew.certificates[index].date),
@@ -56,6 +56,19 @@ class DetailCrewView extends StatelessWidget {
                 )
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 10, top: 20),
+                  child: IconButton(
+                    onPressed: () {
+                      Dialogs.certificates = crew.certificates;
+                      Navigator.of(context).restorablePush(Dialogs.editCrewPopup);
+                    },
+                    icon: const Icon(Icons.edit)))
+              ],
+            )
           ],
         ),
       ),
