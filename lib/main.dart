@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sample_project/view/detail_crew_view.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
@@ -29,7 +28,6 @@ class MyApp extends StatelessWidget {
       routes: {
         "/" : (context) => CrewView(title: 'project_title'.tr),
         "/settings" : (context) => const SettingsView(),
-        "/detail_crew" : (context) => const DetailCrewView(),
       },
     );
   }
