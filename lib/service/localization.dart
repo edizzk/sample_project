@@ -22,6 +22,7 @@ class Localization extends Translations {
       'nationality': 'Nationality',
       'crew_title': 'Title',
       'certificates': 'Certificates',
+      'certificate_list': 'Certificate List',
     },
     'tr_TR': {
       'project_title': 'Örnek Proje',
@@ -41,6 +42,7 @@ class Localization extends Translations {
       'nationality': 'Ulus',
       'crew_title': 'Başlık',
       'certificates': 'Sertifikalar',
+      'certificate_list': 'Sertifika Listesi',
     }
   };
 }
